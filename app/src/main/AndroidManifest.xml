@@ -38,6 +38,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.TableListActivity"
+            android:label="@string/title_activity_list" />
+        <activity
             android:name=".ui.ListActivity"
             android:label="@string/title_activity_list" />
         <activity
@@ -52,7 +55,6 @@
         <activity
             android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".ui.GuideActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/title_activity_main" />

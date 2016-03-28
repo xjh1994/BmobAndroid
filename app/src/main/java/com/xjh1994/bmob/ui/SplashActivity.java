@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.xjh1994.bmob.CustomApplication;
 import com.xjh1994.bmob.event.SplashEvent;
 
 import de.greenrobot.event.EventBus;
@@ -46,12 +45,10 @@ public class SplashActivity extends AppCompatActivity {
             }
         }
 
-        boolean isFirstUse = CustomApplication.getInstance().getSpUtil().isFirstUse();
+        /*boolean isFirstUse = CustomApplication.getInstance().getSpUtil().isFirstUse();
         if (isFirstUse)
-            EventBus.getDefault().post(new SplashEvent(SplashEvent.GO_GUIDE));
-//TODO 未登录状态        else if (BmobUser.getCurrentUser(getApplicationContext()) == null)
-//            EventBus.getDefault().post(new SplashEvent(SplashEvent.GO_LOGIN));
-        else
+            EventBus.getDefault().post(new SplashEvent(SplashEvent.GO_LOGIN));
+        else*/
             EventBus.getDefault().post(new SplashEvent(SplashEvent.GO_HOME));
     }
 
@@ -59,10 +56,6 @@ public class SplashActivity extends AppCompatActivity {
         switch (splashEvent.getMsg()) {
             case SplashEvent.GO_HOME:
                 startAnimActivity(MainActivity.class);
-                break;
-            case SplashEvent.GO_GUIDE:
-                CustomApplication.getInstance().getSpUtil().setIsFirstUse(false);
-                startAnimActivity(GuideActivity.class);
                 break;
             case SplashEvent.GO_LOGIN:
                 startAnimActivity(LoginActivity.class);

@@ -1,17 +1,31 @@
 package com.xjh1994.bmob.ui;
 
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.xjh1994.bmob.R;
+import com.xjh1994.bmob.adapter.AppItem;
+import com.xjh1994.bmob.adapter.BaseUltimateAdapter;
 import com.xjh1994.bmob.base.BaseActivity;
+import com.xjh1994.bmob.base.IAdapterItem;
+import com.xjh1994.bmob.bean.BmobApp;
+import com.xjh1994.bmob.bean.Results;
+import com.xjh1994.bmob.service.BmobAppManger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import cn.bmob.v3.update.BmobUpdateAgent;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * 首页
@@ -20,6 +34,12 @@ public class MainActivity extends BaseActivity {
 
     @Bind(R.id.navigation_view)
     NavigationView navigationView;
+    @Bind(R.id.ultimate_recycler_view)
+    UltimateRecyclerView ultimateRecyclerView;
+
+    protected LinearLayoutManager linearLayoutManager;
+    protected List dataList = new ArrayList<>();
+    protected BaseUltimateAdapter adapter;
 
     protected DrawerLayout drawerLayout;
     protected ActionBarDrawerToggle actionBarDrawerToggle;
@@ -32,6 +52,10 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initViews() {
         initDrawer();
+        ultimateRecyclerView = (UltimateRecyclerView) findViewById(com.xjh1994.bmob.R.id.ultimate_recycler_view);
+        ultimateRecyclerView.setHasFixedSize(false);
+        linearLayoutManager = new LinearLayoutManager(this);
+        ultimateRecyclerView.setLayoutManager(linearLayoutManager);
     }
 
     @Override
@@ -42,9 +66,45 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initData() {
         initUpdate();
+        fetchData();
     }
 
-    /** 自动更新 */
+    private void fetchData() {
+        ultimateRecyclerView.showEmptyView();
+        BmobAppManger bmobAppManger = new BmobAppManger("977135148@qq.com", "www.xjh1994.com");
+        bmobAppManger.getApps()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<BmobApp>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onNext(final BmobApp bmobApp) {
+                        List<Results> resultsList = bmobApp.getResults();
+                        dataList.addAll(resultsList);
+                        adapter = new BaseUltimateAdapter(MainActivity.this, dataList) {
+                            @NonNull
+                            @Override
+                            public IAdapterItem createItem(Object type) {
+                                return new AppItem();
+                            }
+                        };
+                        ultimateRecyclerView.setAdapter(adapter);
+                        ultimateRecyclerView.hideEmptyView();
+                    }
+                });
+    }
+
+    /**
+     * 自动更新
+     */
     private void initUpdate() {
         BmobUpdateAgent.setUpdateCheckConfig(false);
         BmobUpdateAgent.setUpdateOnlyWifi(false);

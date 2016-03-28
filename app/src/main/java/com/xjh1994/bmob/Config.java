@@ -5,4 +5,5 @@ package com.xjh1994.bmob;
  */
 public class Config {
 
+    public static final String BMOB_REST_API_URL = "https://api.bmob.cn/1/";
 }
