@@ -2,14 +2,13 @@ package com.xjh1994.bmob.ui;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.orhanobut.logger.Logger;
 import com.xjh1994.bmob.adapter.BaseUltimateAdapter;
+import com.xjh1994.bmob.adapter.TableItem;
 import com.xjh1994.bmob.base.BaseListActivity;
 import com.xjh1994.bmob.base.IAdapterItem;
-import com.xjh1994.bmob.adapter.TableItem;
 import com.xjh1994.bmob.service.BmobAppInfoManger;
 
 import org.json.JSONArray;
@@ -43,14 +42,6 @@ public class TableListActivity extends BaseListActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        appId = getIntent().getStringExtra(EXTRA_APPID);
-        masterKey = getIntent().getStringExtra(EXTRA_MASTERKEY);
-    }
-
-    @Override
     protected void onLoadNew() {
 
     }
@@ -62,7 +53,8 @@ public class TableListActivity extends BaseListActivity {
 
     @Override
     protected void fetchData() {
-
+        appId = getIntent().getStringExtra(EXTRA_APPID);
+        masterKey = getIntent().getStringExtra(EXTRA_MASTERKEY);
 
         BmobAppInfoManger bmobAppInfoManger = new BmobAppInfoManger(appId, masterKey);
         bmobAppInfoManger.getAppInfo()
