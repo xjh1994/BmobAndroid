@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/list"
+        android:title="@string/title_activity_list"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/feedback"
+        android:title="@string/title_activity_feedback"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/setting"
+        android:title="@string/title_activity_setting"
+        app:showAsAction="never" />
+</menu>

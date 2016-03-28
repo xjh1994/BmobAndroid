@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CardBackgroundText">
+        <item name="android:padding">@dimen/dp_16</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+        <item name="android:selectable">true</item>
+        <item name="android:background">@drawable/bg_card_nopic</item>
+    </style>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_tool_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/advice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="@string/hint_feedback_content"
+            android:inputType="textMultiLine"
+            android:minHeight="@dimen/dp_120"
+            android:paddingLeft="@dimen/dp_6"
+            android:scrollHorizontally="false"
+            android:textCursorDrawable="@drawable/edittext_cursor_accent"
+            app:met_baseColor="@color/primaryTextColor"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelAlwaysShown="true"
+            app:met_floatingLabelText="@string/your_advice"
+            app:met_floatingLabelTextSize="14sp"
+            app:met_maxCharacters="140"
+            app:met_primaryColor="@color/colorAccent" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:hint="@string/hint_feedback_contacts"
+            android:inputType="text"
+            android:paddingLeft="@dimen/dp_6"
+            android:textCursorDrawable="@drawable/edittext_cursor_accent"
+            app:met_baseColor="@color/primaryTextColor"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelAlwaysShown="true"
+            app:met_floatingLabelText="@string/contact"
+            app:met_floatingLabelTextSize="14sp"
+            app:met_maxCharacters="30"
+            app:met_primaryColor="@color/colorAccent"
+            app:met_singleLineEllipsis="true" />
+    </LinearLayout>
+
+</LinearLayout>

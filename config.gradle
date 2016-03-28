@@ -1,0 +1,29 @@
+ext {
+    android = [
+            ANDROID_MIN_SDK_VERSION      : 14,
+            ANDROID_TARGET_SDK_VERSION   : 23,
+            ANDROID_REDERSCRIPT_TARGETAPI: 23
+    ]
+
+    version = [
+            VERSION_CODE: 1,
+            VERSION_NAME: '1.0'
+    ]
+
+    umeng = [
+            UMENG_APPKEY: '56de7e5567e58e2c4e000c19',
+            UMENG_CHANNEL: ''
+    ]
+
+    bugly = [
+            BUGLY_APPID : '"900021794"',
+            BUGLY_APPKEY: '"WJEYDSv5vSx6dmkD"'
+    ]
+
+    bmob = [
+            BMOB_APP_KEY: 'f78e48d465f71630e411535c4b8bfdcf',
+            BMOB_CHANNEL: ''
+    ]
+
+    supportLibVersion = project.ANDROID_BUILD_TOOLS_VERSION
+}

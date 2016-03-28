@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Bmob</string>
+    <string name="app_name1">Bmob Debug</string>
+
+    <string name="title_activity_main">首页</string>
+    <string name="title_activity_login">登录</string>
+
+    <string name="drawer_open">侧滑打开</string>
+    <string name="drawer_close">侧滑关闭</string>
+    <string name="title_activity_feedback">反馈</string>
+    <string name="title_activity_about">关于</string>
+
+    <string name="submit">提交</string>
+    <string name="too_short">输入内容太短了</string>
+    <string name="too_long">输入内容太长了</string>
+    <string name="submit_success">提交成功</string>
+    <string name="submit_failed">提交失败</string>
+    <string name="hint_feedback_content">反馈内容</string>
+    <string name="hint_feedback_contacts">微信、QQ、邮箱……</string>
+    <string name="contact">联系方式</string>
+    <string name="your_advice">您的建议</string>
+    <string name="submit_success_thanks_to_advice">提交成功，感谢您的反馈</string>
+
+    <string name="description">HelloAndroid，集成安卓开发所需的常用框架</string>
+    <string name="developer_github">xjh1994</string>
+    <string name="developer_weibo">看什么看没看过程序猿啊</string>
+    <string name="app_about">HelloAndroid是一款安卓开发框架，集成了安卓开发过程中常用的框架组件，提升开发速度。</string>
+    <string name="developer">开发者</string>
+    <string name="copyright">开发者：Github@xjh1994</string>
+    <string name="update_latest_version">已经是最新版本啦</string>
+    <string name="update_search_error">查询出错或查询超时</string>
+    <string name="update_ignored_version">该版本已被忽略更新</string>
+    <string name="check_update">检查更新</string>
+    <string name="not_login">还没有登录哦</string>
+    <string name="system">系统</string>
+
+    <string name="pref_title_share">分享</string>
+    <string name="pref_summary_share">share hello android</string>
+    <string name="pref_title_update">检查更新</string>
+    <string name="pref_summary_update">update hello android</string>
+    <string name="pref_title_about">关于</string>
+    <string name="pref_summary_about">about hello android</string>
+    <string name="pref_title_logout">退出登录</string>
+    <string name="notification">消息推送</string>
+    <string name="pref_summary_notify">有新消息时推送</string>
+    <string name="pref_summary_notify_on">已打开</string>
+    <string name="pref_summary_notify_off">已关闭</string>
+    <string name="title_activity_setting">设置</string>
+    <string name="share_app_text">Hello Android is an App for ...</string>
+    <string name="share_title">分享</string>
+    <string name="title_activity_list">列表</string>
+    <string name="username">用户名</string>
+    <string name="login">登录</string>
+    <string name="password">密码</string>
+    <string name="no_more_data">没有更多数据了</string>
+    <string name="data_list_empty">数据为空</string>
+    <string name="title_menu_1">menu1</string>
+    <string name="title_menu_2">menu2</string>
+    <string name="title_menu_3">menu3</string>
+    <string name="loading">加载中...</string>
+</resources>

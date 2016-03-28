@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="setting"
+    android:layout="@layout/preference_item"
+    android:title="@string/title_activity_setting">
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="@string/notification">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="notification"
+            android:layout="@layout/preference_item"
+            android:summaryOff="@string/pref_summary_notify_off"
+            android:summaryOn="@string/pref_summary_notify_on"
+            android:title="@string/pref_summary_notify" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="@string/app_name">
+        <Preference
+            android:key="share"
+            android:layout="@layout/preference_item"
+            android:summary="@string/pref_summary_share"
+            android:title="@string/pref_title_share" />
+
+        <Preference
+            android:key="update"
+            android:layout="@layout/preference_item"
+            android:summary="@string/pref_summary_about"
+            android:title="@string/pref_title_update" />
+
+        <Preference
+            android:key="about"
+            android:layout="@layout/preference_item"
+            android:summary="@string/pref_summary_about"
+            android:title="@string/pref_title_about" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="@string/system">
+
+        <Preference
+            android:key="logout"
+            android:layout="@layout/preference_item"
+            android:title="@string/pref_title_logout" />
+    </PreferenceCategory>
+</PreferenceScreen>
