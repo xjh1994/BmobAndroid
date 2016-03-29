@@ -79,7 +79,7 @@ public class TableListActivity extends BaseListActivity {
                             JSONArray jsonArray = jsonObject.getJSONArray("results");
                             int length = jsonArray.length();
                             for (int i = 0; i < length; i++) {
-                                JSONObject resultsObj = jsonArray.getJSONObject(0);
+                                JSONObject resultsObj = jsonArray.getJSONObject(i);
                                 String className = resultsObj.getString("className");    //表名
                                 classList.add(className);
                             }

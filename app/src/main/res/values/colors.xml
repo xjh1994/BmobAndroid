@@ -15,4 +15,5 @@
 
     <color name="list_item_press">#a9bdfc</color>
     <color name="card_rectangle">#10000000</color>
+    <color name="default_bg">#E8E8E7</color>
 </resources>

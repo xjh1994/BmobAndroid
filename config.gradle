@@ -1,0 +1,29 @@
+ext {
+    android = [
+            ANDROID_MIN_SDK_VERSION      : 14,
+            ANDROID_TARGET_SDK_VERSION   : 23,
+            ANDROID_REDERSCRIPT_TARGETAPI: 23
+    ]
+
+    version = [
+            VERSION_CODE: 1,
+            VERSION_NAME: '1.0'
+    ]
+
+    umeng = [
+            UMENG_APPKEY: '',
+            UMENG_CHANNEL: ''
+    ]
+
+    bugly = [
+            BUGLY_APPID : '""',
+            BUGLY_APPKEY: '""'
+    ]
+
+    bmob = [
+            BMOB_APP_KEY: '',
+            BMOB_CHANNEL: ''
+    ]
+
+    supportLibVersion = project.ANDROID_BUILD_TOOLS_VERSION
+}

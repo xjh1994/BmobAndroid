@@ -3,11 +3,10 @@ package com.xjh1994.bmob.base;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 
-import com.xjh1994.bmob.adapter.BaseUltimateAdapter;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.xjh1994.bmob.adapter.BaseUltimateAdapter;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -65,13 +64,13 @@ public abstract class BaseListActivity extends BaseActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         ultimateRecyclerView.setLayoutManager(linearLayoutManager);
 
-        ultimateRecyclerView.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                onLoadNew();
-            }
-        });
-        ultimateRecyclerView.enableLoadmore();
+//        ultimateRecyclerView.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                onLoadNew();
+//            }
+//        });
+//        ultimateRecyclerView.enableLoadmore();
         ultimateRecyclerView.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
             @Override
             public void loadMore(int itemsCount, int maxLastVisiblePosition) {
